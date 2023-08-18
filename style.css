@@ -1,0 +1,116 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    border: border-box;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(to right, #012797, #000046);
+    color: #d7d7d7;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+
+  .container {
+    position: relative;
+    width: 50%;
+    height: 10rem;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+
+  .Clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    /* background-color: #1c1c1cf1; */
+    /* background: rgba(235, 0, 255, 0.11); */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    backdrop-filter: blur(50px);
+  }
+
+  .container::before {
+    content: "";
+    width: 160px;
+    height: 160px;
+    background-color: #f41b75;
+    border-radius: 100%;
+    z-index: -1;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    filter: blur(50%);
+  }
+
+  .container::after {
+    content: "";
+    width: 160px;
+    height: 160px;
+    background-color: #419aff;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    /* filter: blur(3px); */
+  }
+
+  .Clock span {
+    font-size: 5rem;
+    width: 5rem;
+  }
+
+  .Clock span::before {
+    font-size: 1rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .Clock #hr::before {
+    content: "HOURS";
+  }
+
+  .Clock #min::before {
+    content: "MINUTE";
+  }
+
+  .Clock #sec::before {
+    content: "SECOND";
+  }
+
+  @media screen and (max-width: 500px) {
+    .Clock span {
+      font-size: 2.5rem;
+      /* background-color: #f41b75; */
+    }
+
+    .Clock span::before {
+      display: none;
+    }
+
+    .container::after {
+      width: 100px;
+      height: 100px;
+    }
+
+    .container::before {
+      width: 100px;
+      height: 100px;
+      top: -10px;
+      left: -10px;
+    }
+  }
